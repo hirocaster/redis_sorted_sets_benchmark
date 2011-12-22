@@ -7,11 +7,11 @@ key = 'rank'
 
 redis = Redis.new
 
-# CSV.open('data.csv', 'r') do |rows|
-#   rows.each do |row|
-#     redis.zadd(key, row[1], row[0])
-#   end
-# end
+CSV.open('data.csv', 'r') do |rows|
+  rows.each do |row|
+    redis.zadd(key, row[1], row[0])
+  end
+end
 
 # p redis.zcard key
 
